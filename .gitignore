@@ -1,0 +1,122 @@
+# ============================================
+# Python - Always ignore these
+# ============================================
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.coverage
+.coverage.*
+.htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.~*
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# ============================================
+# Project specific - Temporary/backup files
+# ============================================
+
+# Backup files
+*.save
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# ============================================
+# DSA Project - Keep all source directories
+# ============================================
+# We want to keep:
+# - core/
+# - benchmarks/
+# - eval/
+# - tests/
+# - src/
+# - app/
+# - agents/
+# - rag/
+# - infra/
+# - tools/
+
+# Just ignore cache and temp files within them
+
+# ============================================
+# OS specific
+# ============================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ============================================
+# Keep these files (don't ignore)
+# ============================================
+# !.gitignore
+# !.env.example
+# !README.md
+# !pyproject.toml
+# !uv.lock
