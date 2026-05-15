@@ -120,3 +120,11 @@ Desktop.ini
 # !README.md
 # !pyproject.toml
 # !uv.lock
+
+# ============================================
+# Force include (don't ignore) these important files
+# ============================================
+!/.gitignore
+!README.md
+!pyproject.toml
+!requirements.txt

@@ -1,221 +1,170 @@
-\# Stage 2: DSA + Linux + AI Dev Tools
+# DSA Learning Repository
 
+**Stage 2 of AJ's 24-month Agentic AI Engineering Roadmap**
+*Data Structures, Algorithms, Linux/CLI, and AI Dev Tools*
 
+---
 
-\## What This Project Is
+## 📚 What's Inside
 
-A structured learning environment for mastering Data Structures \& Algorithms, Linux fundamentals, and AI development tools. This repo follows production-grade architecture patterns used in agentic AI systems.
+This repository contains my implementation of core data structures and algorithms from scratch, along with LeetCode solutions and Linux command-line practice.
 
+---
 
-
-\## Project Structure
-
-stage-2-dsa/
-
-├── app/ → Entry points (CLI, API routes)
-
-├── core/ → Domain logic (pure Python DSA implementations)
-
-├── agents/ → Future LangGraph agents \& orchestrators
-
-├── tools/ → Future tool wrappers for agents
-
-├── rag/ → Future retrieval \& embedding logic
-
-├── eval/ → Tests, benchmarks, LeetCode solutions
-
-└── infra/ → Shell scripts, Docker, configs
-
-
-
-text
-
-
-
-\## Installation
-
-
-
-```bash
-
-\# Install uv (if not already installed)
-
-pip install uv
-
-
-
-\# Install project dependencies
-
-uv pip install -e .
-
-
-
-Development Setup
-
-\# Install with dev dependencies
-
-uv pip install -e ".\[dev]"
-
-Project Goal
-
-By the end of Stage 2, this repo will contain a complete DSA library with 50+ LeetCode solutions, all type-checked, tested, and organised in a professional project structure ready for LangGraph integration.
-
-
+## 🏗️ Project Structure
+DSA/
+├── core/ # Core DSA implementations
+│ ├── stack.py # Stack (list-based)
+│ ├── stack_linked.py # Stack (LinkedList-based)
+│ ├── queue.py # Queue (deque-based)
+│ ├── linked_list.py # Complete LinkedList implementation
+│ ├── circular_buffer.py # Ring buffer
+│ ├── binary_search.py # Binary search (iterative + recursive)
+│ ├── two_pointers.py # Two pointers pattern
+│ ├── pydantic_models.py # Pydantic validation examples
+│ └── pdb_debug_examples/ # pdb debugging practice
+├── eval/ # Evaluation & LeetCode
+│ ├── leetcode/ # LeetCode solutions
+│ │ ├── lc_001_two_sum.py
+│ │ ├── lc_020_valid_parentheses.py
+│ │ ├── lc_021_merge_sorted_lists.py
+│ │ ├── lc_026_remove_duplicates.py
+│ │ ├── lc_141_linked_list_cycle.py
+│ │ ├── lc_155_min_stack.py
+│ │ ├── lc_167_two_sum_ii.py
+│ │ ├── lc_206_reverse_linked_list.py
+│ │ ├── lc_225_stack_using_queues.py
+│ │ ├── lc_232_queue_using_stacks.py
+│ │ ├── lc_704_binary_search.py
+│ │ ├── lc_876_middle_linked_list.py
+│ │ └── lc_977_squares_sorted.py
+│ └── test_*.py # pytest test files
+├── benchmarks/ # Performance benchmarks
+│ ├── binary_search_scale.py
+│ ├── deque_vs_list.py
+│ └── array_operations_timing.py
+└── pyproject.toml # Project configuration
 
 text
 
+---
 
+## ✅ What I've Built (Week 1-2)
 
-\## Step 5: Write the pyproject.toml File
+### Week 1: Foundations
+- ✅ Big O analysis (O(1), O(n), O(n²), O(log n))
+- ✅ Binary search (iterative + recursive)
+- ✅ pdb debugging with breakpoints
+- ✅ Two Pointers pattern (LeetCode 167, 26, 977)
+- ✅ Type hints with mypy --strict
 
+### Week 2: Core Data Structures
+- ✅ **Linked List** - Complete implementation
+  - `append()`, `prepend()`, `delete()`, `search()`
+  - `reverse()` (iterative + recursive)
+  - `find_middle()` (tortoise and hare)
+- ✅ **Stack** - Two implementations
+  - List-based (built-in)
+  - LinkedList-based (composition)
+- ✅ **Queue** - deque-based with O(1) operations
+- ✅ **Circular Buffer** - Fixed-size ring buffer with modulo wrap
+- ✅ **Min Stack** - O(1) getMin with auxiliary stack
 
+### Linux Commands Mastered
+- `grep` (recursive, line numbers, count, invert)
+- `find` (name, type, size, mtime)
+- `sed` (stream editing, find/replace)
+- `awk` (column extraction)
+- `uniq` (duplicate counting with `-c`)
+- `less` (pagination, search, follow mode)
+- Pipe `|` composition
 
-```powershell
+### LeetCode Solved (Week 2)
+| # | Problem | Key Insight |
+|---|---------|--------------|
+| 1 | Two Sum | Hash map for O(n) |
+| 20 | Valid Parentheses | Stack for matching |
+| 21 | Merge Two Sorted Lists | Two pointers |
+| 141 | Linked List Cycle | Floyd's algorithm |
+| 155 | Min Stack | Auxiliary stack |
+| 206 | Reverse Linked List | Three pointers |
+| 225 | Stack using Queues | Two queues + rotate |
+| 232 | Queue using Stacks | Two stacks + transfer |
+| 876 | Middle of Linked List | Tortoise and hare |
 
-\# Open pyproject.toml in Notepad
+**Total LeetCode: 13 problems**
 
-notepad pyproject.toml
+---
 
-Copy and paste this exact content:
+## 🛠️ Setup & Installation
 
+### Prerequisites
+- Python 3.11+
+- `uv` package manager
 
-
-toml
-
-\[project]
-
-name = "stage-2-dsa"
-
-version = "0.1.0"
-
-description = "Stage 2: DSA + Linux + AI Dev Tools — AJ's Coding Journey"
-
-readme = "README.md"
-
-requires-python = ">=3.11"
-
-license = { text = "MIT" }
-
-authors = \[
-
-&#x20;   { name = "Your Name", email = "your.email@example.com" }
-
-]
-
-
-
-dependencies = \[
-
-&#x20;   "pydantic>=2.0",
-
-]
-
-
-
-\[project.optional-dependencies]
-
-dev = \[
-
-&#x20;   "mypy>=1.0",
-
-&#x20;   "pytest>=7.0",
-
-&#x20;   "black>=23.0",
-
-&#x20;   "ruff>=0.1.0",
-
-]
-
-
-
-\[build-system]
-
-requires = \["setuptools>=61.0"]
-
-build-backend = "setuptools.build\_meta"
-
-
-
-\[tool.black]
-
-line-length = 88
-
-target-version = \['py311']
-
-
-
-\[tool.ruff]
-
-line-length = 88
-
-select = \["E", "F", "I", "N", "W"]
-
-
-# Day 2 (using WSL command lines)
-
-# DSA Implementations in Python
-
-Type-safe data structure implementations with 100% test coverage and performance benchmarks.
-
-## 🚀 Quick Start
+### Installation
 
 ```bash
-# Clone/cd into project
-cd /mnt/d/DSA
+# Clone the repository
+git clone https://github.com/yourusername/DSA.git
+cd DSA
 
-# Install with uv
+# Install uv (if not installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Create virtual environment
+uv venv
+
+# Activate it
+source .venv/bin/activate
+
+# Install dependencies
 uv pip install -e ".[dev]"
-
-# Run tests
-pytest
-
-# Type check
-mypy src/
-📁 Project Structure
-text
-src/
-├── interfaces/      # Abstract base classes (what each DS must implement)
-├── data_structures/ # Concrete implementations (Stack, Queue, etc.)
-tests/               # pytest test suite with 100% coverage
-📊 Implemented Data Structures
-Structure	Time Complexity	Space Complexity	Tests
-Stack (list-based)	Push/Pop O(1)	O(n)	12 ✅
-Queue (deque-based)	Enqueue/Dequeue O(1)	O(n)	15 ✅
-🔧 Development Commands
+Type Checking
 bash
-pytest -v --cov=src          # Run tests with coverage
-mypy src/                    # Type check all code
-black src/ tests/            # Format code
-ruff check src/              # Lint code
-📈 Performance
-Run benchmarks to see O(1) vs O(n²) differences:
-
+mypy --strict core/
+Running Tests
 bash
-python benchmarks/speed.py
-text
+pytest tests/ -v
+📊 Performance Benchmarks
+bash
+# Compare linear vs binary search
+python benchmarks/binary_search_scale.py
 
-## 6. Your Action Items RIGHT NOW:
+# Compare list.pop(0) vs deque.popleft()
+python benchmarks/deque_vs_list.py
 
-**Task 1:** Run the editable install:
-```bash
-cd /mnt/d/DSA
-uv pip install -e ".[dev]"
-Paste output here 👇
+# Time array operations (O(1) vs O(n))
+python benchmarks/array_operations_timing.py
+🐛 Debugging with pdb
+bash
+# Run with debugger
+python -m pdb core/stack.py
 
-Task 2: While waiting, add space complexity comments to your Stack and Queue.
+# Common pdb commands:
+# n - next line
+# s - step into function
+# p var - print variable
+# c - continue
+# w - show call stack
+📈 Progress Tracker
+Metric	Week 1	Week 2	Target
+LeetCode	4	13	20
+Data Structures	2	5	10
+Linux Commands	8	15+	20
+pdb usage	Learning	Every session	Every session
+🎯 Next Up (Week 3)
+Hash tables (implement from scratch)
 
-Example for Stack:
+Trees and Binary Search Trees
 
-python
-class Stack(StackInterface[T]):
-    """Stack implementation using Python list.
-    
-    Space Complexity: O(n) where n = number of elements
-    - Each element stored once in the underlying list
-    - No auxiliary structures used
-    """
-    def __init__(self) -> None:
-        self._items: list[T] = []  # O(n) space
+BFS and DFS on graphs
 
+Sorting algorithms (merge, quick)
 
+More LeetCode (target: 20 total)
 
+📝 License
+MIT - Learning purposes only
+
+Made with ☕ and ⌨️ during Stage 2 of the Agentic AI Engineering Roadmap
