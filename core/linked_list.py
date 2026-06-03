@@ -63,15 +63,14 @@ class LinkedList(Generic[T]):
         """
         new_node = Node(value)
         
-        # Case 1: Empty list
         if self._head is None:
+            # List is empty. New node becomes head.
             self._head = new_node
             self._size = 1
             return
         
-        # Case 2: Non-empty list
+        # List is non-empty. Traverse to the tail node.
         current = self._head
-        
         while current.next is not None:
             current = current.next
         current.next = new_node
