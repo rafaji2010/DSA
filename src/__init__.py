@@ -1,1 +1,0 @@
-"""DSA - Data Structures and Algorithms library."""

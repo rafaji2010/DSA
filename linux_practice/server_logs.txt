@@ -1,0 +1,8 @@
+2026-06-21 10:15:30 INFO User 'admin' logged in from 192.168.1.10
+2026-06-21 10:16:45 ERROR Database connection failed for user 'admin'
+2026-06-21 10:17:00 WARNING Slow query detected (took 3.4s)
+2026-06-21 10:18:20 INFO User 'rafaji' uploaded photo_001.jpg
+2026-06-21 10:19:05 ERROR Invalid file format: photo_002.gif
+2026-06-22 08:00:00 INFO System backup started
+2026-06-22 08:05:30 ERROR Backup failed: Disk full
+2026-06-22 08:06:00 CRITICAL System shutting down due to errors
